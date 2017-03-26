@@ -35,3 +35,4 @@ build/
 .externalNativeBuild/
 gradlew
 gradlew.bat
+gradle/
