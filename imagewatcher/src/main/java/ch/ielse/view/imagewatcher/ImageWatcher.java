@@ -250,6 +250,7 @@ public class ImageWatcher extends FrameLayout implements GestureDetector.OnGestu
                         }
                     }
 //                } else if (Math.abs(moveX) < mTouchSlop && moveY > mTouchSlop * 3) {
+                    //提高下滑退出的触发灵敏度
                 } else if (Math.abs(moveX) <Math.abs(moveY)) {
                     // 单手垂直下拉。转化为Exit手势，可以在下拉过程中看到原始界面;
                     mTouchMode = TOUCH_MODE_EXIT;
@@ -296,6 +297,7 @@ public class ImageWatcher extends FrameLayout implements GestureDetector.OnGestu
             handleDoubleTapTouchResult();
             return true;
         } else {
+            //提高单击退出灵敏度
             mHandler.sendEmptyMessageDelayed(SINGLE_TAP_UP_CONFIRMED, SINGLE_TAP_UP_CONFIRMED_TIME);
         }
         return false;
